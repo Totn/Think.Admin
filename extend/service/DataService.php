@@ -26,6 +26,10 @@ use think\Request;
  */
 class DataService
 {
+    // 标记删除的字段
+    const MARK_DELETE_FIELD = "is_deleted";
+    // 标记删除的值
+    const MARK_DELETED = 1;
 
     /**
      * 数据签名
@@ -116,8 +120,8 @@ class DataService
         // 删除模式，如果存在 is_deleted 字段使用软删除
         if ($field === 'delete') {
             if (method_exists($db, 'getTableFields')) {
-                if (in_array('is_deleted', $db->getTableFields($db->getTable()))) {
-                    return false !== $db->where($where)->update(['is_deleted' => 1]);
+                if (in_array(self::MARK_DELETE_FIELD, $db->getTableFields($db->getTable()))) {
+                    return false !== $db->where($where)->update([self::MARK_DELETE_FIELD => self::MARK_DELETED]);
                 }
             }
             return false !== $db->where($where)->delete();

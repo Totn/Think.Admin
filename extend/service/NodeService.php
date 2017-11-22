@@ -97,9 +97,30 @@ class NodeService
             }
             $tmp = explode('/', $thr);
             list($one, $two) = ["{$tmp[0]}", "{$tmp[0]}/{$tmp[1]}"];
-            $nodes[$one] = array_merge(isset($alias[$one]) ? $alias[$one] : ['node' => $one, 'title' => '', 'is_menu' => 0, 'is_auth' => 0, 'is_login' => 0], ['pnode' => '']);
-            $nodes[$two] = array_merge(isset($alias[$two]) ? $alias[$two] : ['node' => $two, 'title' => '', 'is_menu' => 0, 'is_auth' => 0, 'is_login' => 0], ['pnode' => $one]);
-            $nodes[$thr] = array_merge(isset($alias[$thr]) ? $alias[$thr] : ['node' => $thr, 'title' => '', 'is_menu' => 0, 'is_auth' => 0, 'is_login' => 0], ['pnode' => $two]);
+            $nodes[$one] = array_merge(isset($alias[$one]) ? $alias[$one] : [
+                'node' => $one,
+                'title' => '',
+                'is_menu' => 0,
+                'is_auth' => 0,
+                'is_login' => 0
+            ], ['pnode' => '']);
+
+            $nodes[$two] = array_merge(isset($alias[$two]) ? $alias[$two] : [
+                'node' => $two,
+                'title' => '',
+                'is_menu' => 0,
+                'is_auth' => 0,
+                'is_login' => 0
+            ], ['pnode' => $one]
+            );
+
+            $nodes[$thr] = array_merge(isset($alias[$thr]) ? $alias[$thr] : [
+                'node' => $thr,
+                'title' => '',
+                'is_menu' => 0,
+                'is_auth' => 0,
+                'is_login' => 0
+            ], ['pnode' => $two]);
         }
         foreach ($nodes as &$node) {
             list($node['is_auth'], $node['is_menu'], $node['is_login']) = [

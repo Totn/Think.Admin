@@ -51,8 +51,11 @@ class BasicAdmin extends Controller
     protected function _form($dbQuery = null, $tplFile = '', $pkField = '', $where = [], $extendData = [])
     {
         $db = is_null($dbQuery) ? Db::name($this->table) : (is_string($dbQuery) ? Db::name($dbQuery) : $dbQuery);
+
         $pk = empty($pkField) ? ($db->getPk() ? $db->getPk() : 'id') : $pkField;
+
         $pkValue = $this->request->request($pk, isset($where[$pk]) ? $where[$pk] : (isset($extendData[$pk]) ? $extendData[$pk] : null));
+
         // 非POST请求, 获取数据并显示表单页面
         if (!$this->request->isPost()) {
             $vo = ($pkValue !== null) ? array_merge((array)$db->where($pk, $pkValue)->where($where)->find(), $extendData) : $extendData;
@@ -62,6 +65,7 @@ class BasicAdmin extends Controller
             }
             return $vo;
         }
+
         // POST请求, 数据自动存库
         $data = array_merge($this->request->post(), $extendData);
         if (false !== $this->_callback('_form_filter', $data)) {
@@ -98,20 +102,29 @@ class BasicAdmin extends Controller
             }
             $this->success('列表排序成功, 正在刷新列表', '');
         }
+
         // 列表数据查询与显示
         if (null === $db->getOptions('order')) {
             $fields = $db->getTableFields($db->getTable());
             in_array('sort', $fields) && $db->order('sort asc');
         }
+
         if ($isPage) {
             $rows = intval($this->request->get('rows', cookie('rows')));
             cookie('rows', $rows >= 10 ? $rows : 20);
             $page = $db->paginate($rows, $total, ['query' => $this->request->get('', '', 'urlencode')]);
-            list($pattern, $replacement) = [['|href="(.*?)"|', '|pagination|'], ['data-open="$1"', 'pagination pull-right']];
-            list($result['list'], $result['page']) = [$page->all(), preg_replace($pattern, $replacement, $page->render())];
+            list($pattern, $replacement) = [
+                ['|href="(.*?)"|', '|pagination|'],
+                ['data-open="$1"', 'pagination pull-right']
+            ];
+            list($result['list'], $result['page']) = [
+                $page->all(),
+                preg_replace($pattern, $replacement, $page->render())
+            ];
         } else {
             $result['list'] = $db->select();
         }
+
         if (false !== $this->_callback('_data_filter', $result['list']) && $isDisplay) {
             !empty($this->title) && $this->assign('title', $this->title);
             return $this->fetch('', $result);

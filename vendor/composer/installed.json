@@ -80,17 +80,17 @@
     },
     {
         "name": "qiniu/php-sdk",
-        "version": "v7.2.1",
-        "version_normalized": "7.2.1.0",
+        "version": "v7.2.2",
+        "version_normalized": "7.2.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/qiniu/php-sdk.git",
-            "reference": "8c7ba738bd4443ee3569a07441913b07c4b2c4a2"
+            "reference": "79290fd9cb5d72cc2feef779008b3aaeeac49eb9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/qiniu/php-sdk/8c7ba738bd4443ee3569a07441913b07c4b2c4a2.zip",
-            "reference": "8c7ba738bd4443ee3569a07441913b07c4b2c4a2",
+            "url": "https://files.phpcomposer.com/files/qiniu/php-sdk/79290fd9cb5d72cc2feef779008b3aaeeac49eb9.zip",
+            "reference": "79290fd9cb5d72cc2feef779008b3aaeeac49eb9",
             "shasum": ""
         },
         "require": {
@@ -100,7 +100,7 @@
             "phpunit/phpunit": "~4.0",
             "squizlabs/php_codesniffer": "~2.3"
         },
-        "time": "2017-08-26T00:46:11+00:00",
+        "time": "2017-11-07T06:12:11+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -133,23 +133,23 @@
     },
     {
         "name": "zoujingli/ip2region",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/zoujingli/ip2region.git",
-            "reference": "2efe42321acb83d01d1de5bfde69142ad81bff9b"
+            "reference": "5d981fbf3b574bad7fe9652e7aecba0920f54325"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/zoujingli/ip2region/2efe42321acb83d01d1de5bfde69142ad81bff9b.zip",
-            "reference": "2efe42321acb83d01d1de5bfde69142ad81bff9b",
+            "url": "https://files.phpcomposer.com/files/zoujingli/ip2region/5d981fbf3b574bad7fe9652e7aecba0920f54325.zip",
+            "reference": "5d981fbf3b574bad7fe9652e7aecba0920f54325",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2017-03-22T10:03:27+00:00",
+        "time": "2017-11-09T03:36:17+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -169,17 +169,17 @@
     },
     {
         "name": "topthink/framework",
-        "version": "v5.0.11",
-        "version_normalized": "5.0.11.0",
+        "version": "v5.0.12",
+        "version_normalized": "5.0.12.0",
         "source": {
             "type": "git",
             "url": "https://github.com/top-think/framework.git",
-            "reference": "926c9edb0c2682b14f563cac2c8a93f42f729016"
+            "reference": "0fb51680e8d62495d27f17a0e6cf889b763a6d3c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/top-think/framework/926c9edb0c2682b14f563cac2c8a93f42f729016.zip",
-            "reference": "926c9edb0c2682b14f563cac2c8a93f42f729016",
+            "url": "https://files.phpcomposer.com/files/top-think/framework/0fb51680e8d62495d27f17a0e6cf889b763a6d3c.zip",
+            "reference": "0fb51680e8d62495d27f17a0e6cf889b763a6d3c",
             "shasum": ""
         },
         "require": {
@@ -194,7 +194,7 @@
             "phpunit/phpunit": "4.8.*",
             "sebastian/phpcpd": "2.*"
         },
-        "time": "2017-09-13T03:30:29+00:00",
+        "time": "2017-11-06T01:19:03+00:00",
         "type": "think-framework",
         "installation-source": "dist",
         "autoload": {
@@ -381,23 +381,23 @@
     },
     {
         "name": "symfony/options-resolver",
-        "version": "v3.3.10",
-        "version_normalized": "3.3.10.0",
+        "version": "v3.3.13",
+        "version_normalized": "3.3.13.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/options-resolver.git",
-            "reference": "ee4e22978fe885b54ee5da8c7964f0a5301abfb6"
+            "reference": "623d9c210a137205f7e6e98166105625402cbb2f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://files.phpcomposer.com/files/symfony/options-resolver/ee4e22978fe885b54ee5da8c7964f0a5301abfb6.zip",
-            "reference": "ee4e22978fe885b54ee5da8c7964f0a5301abfb6",
+            "url": "https://files.phpcomposer.com/files/symfony/options-resolver/623d9c210a137205f7e6e98166105625402cbb2f.zip",
+            "reference": "623d9c210a137205f7e6e98166105625402cbb2f",
             "shasum": ""
         },
         "require": {
             "php": "^5.5.9|>=7.0.8"
         },
-        "time": "2017-07-29T21:54:42+00:00",
+        "time": "2017-11-05T15:47:03+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

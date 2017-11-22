@@ -1,13 +1,13 @@
-:: Composer °²×°¸üĞÂ½Å±¾
+:: Composer å®‰è£…æ›´æ–°è„šæœ¬
 @echo off
 title Composer Plugs Install And Optimize
 echo.
-echo ========= 1. ÇåÀíÒÑ°²×°²å¼ş =========
+echo ========= 1. æ¸…ç†å·²å®‰è£…æ’ä»¶ =========
 rmdir /s/q vendor thinkphp runtime
 echo.
-echo ========= 2. ÏÂÔØ²¢°²×°²å¼ş =========
+echo ========= 2. ä¸‹è½½å¹¶å®‰è£…æ’ä»¶ =========
 composer update --profile --prefer-dist --optimize-autoloader
 echo.
-echo ========= 3. Ñ¹Ëõ²¢·¢²¼²å¼ş =========
+echo ========= 3. å‹ç¼©å¹¶å‘å¸ƒæ’ä»¶ =========
 composer dump-autoload --optimize
 exit
